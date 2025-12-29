@@ -4,7 +4,13 @@
  * Object memiliki property: name, age, major.
  * Note: Gunakan JavaScript Modern.
  */
-const users = [];
+const users = [
+  {nama: "Sun", age: 20, major: "PPW"},
+  {nama: "Aril", age: 19, major: "PPM"},
+  {nama: "Citra", age: 18, major: "PPW"},
+  {nama: "Granger", age: 17, major: "PSJ"},
+  {nama: "Xavier", age: 20, major: "PPM"}
+];
 
 /**
  * Helper async
@@ -23,6 +29,9 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const all = async () => {
   await delay(300);
   // isi di sini
+  for(const user of users){
+    console.log(user);
+  }
 };
 
 /**
@@ -37,6 +46,8 @@ const all = async () => {
 const store = async (user) => {
   await delay(300);
   // isi di sini
+  users.push(user)
+  await all();
 };
 
 /**
@@ -51,6 +62,8 @@ const store = async (user) => {
 const update = async (index, user) => {
   await delay(300);
   // isi di sini
+  users.splice(index, 1, user)
+  await all();
 };
 
 /**
@@ -65,6 +78,8 @@ const update = async (index, user) => {
 const destroy = async (index) => {
   await delay(300);
   // isi di sini
+  users.splice(index, 1)
+  await all();
 };
 
 /**
