@@ -21,7 +21,7 @@ function App() {
         <li>Mempelajari tutorial React JS</li>
         <li>Murajaah secara konsisten</li>
       </ol>
-     <Profile nama="Fajar" alamat={"Medan"} umur={20}/>
+      <Profile nama="Fajar" alamat={"Medan"} umur={20}/>
       <img src="https://picsum.photos/200/300" alt="gambar" />
       <Footer nama="Bambang" />
     </>
