@@ -7,6 +7,7 @@ function Header() {
         <li>About</li>
         <li>Login</li>
       </ul>
+      <button> Sign in</button>
     </nav>
   );
 }
