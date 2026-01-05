@@ -1,0 +1,33 @@
+.table {
+    background-color: #f3f3f3;
+    width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.table-body{
+text-align: center;
+}
+
+.member {
+    color: #717171;
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+
+.table-body button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3 ease;
+}
+
+.table button:hover {
+    background-color: #0056b3;
+}
