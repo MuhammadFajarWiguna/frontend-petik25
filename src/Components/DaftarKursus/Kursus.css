@@ -1,0 +1,62 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 50px 8%;
+}
+
+.text-center h3{
+  text-align: center;
+}
+
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.kursus-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+
+.kursus-card h3 {
+  padding: 15px 20px 5px;
+  font-size: 1.1rem;
+}
+
+.kursus-card p {
+  padding: 0 20px;
+  color: #555;
+}
+
+.kursus-card button {
+  margin: 20px;
+  width: calc(100% - 40px);
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ffc107;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kursus-card button:hover {
+  background: #e6ae00;
+}
+
+
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
