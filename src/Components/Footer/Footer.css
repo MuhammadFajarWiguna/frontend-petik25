@@ -1,0 +1,17 @@
+footer {
+  background: #111;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+footer span {
+  font-size: 0.95rem;
+}
+
+footer h4 {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}

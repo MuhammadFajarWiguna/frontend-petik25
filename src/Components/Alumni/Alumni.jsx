@@ -1,11 +1,15 @@
-const Alumni = ({nama, jurusan, perusahaan}) => {
-    return (
-            <ul>
-                <li>Nama : {nama}</li>
-                <li>Jurusan : {jurusan}</li>
-                <li>Tempat Bekerja Sekarang : {perusahaan}</li>
-            </ul>
-    )
-}
+import "./Alumni.css";
+
+const Alumni = ({ foto, nama, jurusan, perusahaan }) => {
+  return (
+    <div className="alumni-card">
+      <img src={foto} alt={nama} />
+
+      <h3>{nama}</h3>
+      <p><strong>Jurusan:</strong> {jurusan}</p>
+      <p><strong>Bekerja di:</strong> {perusahaan}</p>
+    </div>
+  );
+};
 
 export default Alumni;
