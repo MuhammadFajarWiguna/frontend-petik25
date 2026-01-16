@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "judul": "Kursus Pemograman Web & Mobile",
+    "deskripsi": "Belajar membuat Website dan aplikasi Mobile",
+    "harga": "Rp. 2.000.000,-",
+    "target": "6 Bulan",
+    "gambar": "1.jpg"
+  },
+
+  {
+    "id": 2,
+    "judul": "Kursus Bahasa Asing (Jepang / Inggris) ",
+    "deskripsi": "Belajar bahasa asing untuk dunia kerja terkhusus Bahasa Jepang/Inggris",
+    "harga": "Rp. 1.000.000,-",
+    "target": "1 Tahun",
+    "gambar": "3.jpg"
+  },
+
+  {
+    "id": 3,
+    "judul": "Kursus Makeup Professional",
+    "deskripsi": "Pelatihan Makeup Professional from zer",
+    "harga": "Rp. 1.500.000,-",
+    "target": "3 Bulan",
+    "gambar": "2.jpg"
+  },
+
+  {
+    "id": 4,
+    "nama_alumni": "Cantika Alisya Putri",
+    "jurusan": "Makeup Professional",
+    "bekerja": "L'Oréal",
+    "gambar": "4.png"
+  },
+
+  {
+    "id": 5,
+    "nama_alumni": "Bahlil Xavier Tesla",
+    "jurusan": "Pemograman Web/Mobile",
+    "bekerja": "WEBARQ",
+    "gambar": "6.png"
+  },
+
+  {
+    "id": 6,
+    "nama_alumni": "Vierra Cynthia",
+    "jurusan": "Bahasa Asing (Jepang/Inggris)",
+    "bekerja": "English Academy (Ruangguru)",
+    "gambar": "7.jpg"
+  }
+]
