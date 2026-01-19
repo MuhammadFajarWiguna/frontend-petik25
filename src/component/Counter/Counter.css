@@ -1,0 +1,39 @@
+.counter-container {
+    margin: 60px auto;
+    text-align: center;
+}
+
+.count-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-grp {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.btn-kurang {
+    background-color:red;
+}
+
+.btn-tambah {
+    background-color: green;
+}
+
+.btn:hover{
+    opacity: 0.85;
+}
