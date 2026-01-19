@@ -1,52 +1,48 @@
 [
-  {
-    "id": 1,
-    "judul": "Kursus Pemograman Web & Mobile",
-    "deskripsi": "Belajar membuat Website dan aplikasi Mobile",
-    "harga": "Rp. 2.000.000,-",
-    "target": "6 Bulan",
-    "gambar": "1.jpg"
-  },
+    {
+        "title": "Tutorial belajar reactjs lengkap",
+        "tags": ["reactjs", "frontend"],
+        "author": "Ucup",
+        "date": "2025-12-23",
+        "isNew": true
 
-  {
-    "id": 2,
-    "judul": "Kursus Bahasa Asing (Jepang / Inggris) ",
-    "deskripsi": "Belajar bahasa asing untuk dunia kerja terkhusus Bahasa Jepang/Inggris",
-    "harga": "Rp. 1.000.000,-",
-    "target": "1 Tahun",
-    "gambar": "3.jpg"
-  },
+    },
 
-  {
-    "id": 3,
-    "judul": "Kursus Makeup Professional",
-    "deskripsi": "Pelatihan Makeup Professional from zer",
-    "harga": "Rp. 1.500.000,-",
-    "target": "3 Bulan",
-    "gambar": "2.jpg"
-  },
+    {
+        "title": "Meningkatkan performa reactjs",
+        "tags": ["reactjs","frontend"],
+        "author": "Budi",
+        "date": "2025-04-19",
+        "isNew": false
 
-  {
-    "id": 4,
-    "nama_alumni": "Cantika Alisya Putri",
-    "jurusan": "Makeup Professional",
-    "bekerja": "L'Oréal",
-    "gambar": "4.png"
-  },
+    },
 
-  {
-    "id": 5,
-    "nama_alumni": "Bahlil Xavier Tesla",
-    "jurusan": "Pemograman Web/Mobile",
-    "bekerja": "WEBARQ",
-    "gambar": "6.png"
-  },
+    {
+        "title": "Cara menggunakan chakra UI di react JS",
+        "tags": ["reactjs","frontend"],
+        "author": "Bambang",
+        "date": "2026-01-04",
+        "isNew": true
 
-  {
-    "id": 6,
-    "nama_alumni": "Vierra Cynthia",
-    "jurusan": "Bahasa Asing (Jepang/Inggris)",
-    "bekerja": "English Academy (Ruangguru)",
-    "gambar": "7.jpg"
-  }
+    },
+
+    {
+        "title": "Marquez ngaku bukan rekan setim yg baik, peringatan buat joan mir",
+        "tags": ["sport", "otomotif"],
+        "author": "Okdwitya Karina Sari",
+        "date": "2023-02-28",
+        "isNew": false
+
+    },
+
+    {
+        "title": "AI perlu ditunjang data center mumpuni, Telkom andalkan big box",
+        "tags": ["Teknologi"],
+        "author": "Agus Tri Haryanto",
+        "date": "2025-02-20",
+        "isNew": false
+
+    }
+
+ 
 ]

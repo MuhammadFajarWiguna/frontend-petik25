@@ -1,0 +1,9 @@
+ul li NavLink {
+text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: blue;
+}
