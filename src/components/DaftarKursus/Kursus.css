@@ -1,0 +1,60 @@
+.kursus-card {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.kursus-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+.kursus-body {
+  padding: 24px;
+}
+
+.kursus-title {
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kursus-badge {
+  width: fit-content;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.kursus-btn {
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.kursus-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(13, 110, 253, 0.35);
+}
+
+
+.kursus-card {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
