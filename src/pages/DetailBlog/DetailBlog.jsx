@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../component/MyNavbar/MyNavbar";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
+
+import { Card, CardBody, CardText, CardTitle, Col, Container, ListGroup, Row } from "reactstrap";
+import { ListGroupItem } from "react-bootstrap";
 
 const DetailBlog = () => {
   const [post, setPost] = useState("");
@@ -27,24 +29,32 @@ const DetailBlog = () => {
 
   return (
     <div>
-      <Navbar />
-      <h1>Detail Blog</h1>
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
-      <hr />
+      <Container className="mt-4 mb-5">
+        <Row className="justify-content-center">
+          <Col md="8">
+            <Card className="mb-4 shadow-sm">
+              <CardBody>
+                <CardTitle tag="h3">{post.title}</CardTitle>
+                <CardText className="text-muted"> {post.body} </CardText>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      
       <h4>Komentar</h4>
+      <ListGroup>
       {comments
         .filter((comment) => comment.postId === Number(id))
         .map((comment) => (
-          <div key={comment.id} style={{ border: "1px solid black", margin: "6px", padding: "6px" }}>
-            <b>{comment.name}</b>
-            <p>{comment.email}</p>
-            <p>{comment.body}</p>
-         
-          </div>
+          <ListGroupItem key={comment.id} className="mb-2">
+              <b>{comment.name}</b>
+              <p className="text-muted-small">{comment.email}</p>
+              <p>{comment.body}</p>
+          </ListGroupItem>
         ))}
-
-        </div>
+      </ListGroup>
+        </Container>
+    </div>
   );
 };
 

@@ -6,7 +6,6 @@ const ErrorPage = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <Navbar />
       <h3>404 Halaman tidak ditemukan!</h3>
       <p>Oopps... Halaman yang kamu cari tidak ada</p>
       <NavLink to={"/"}>Home</NavLink>
