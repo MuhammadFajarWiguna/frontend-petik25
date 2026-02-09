@@ -21,13 +21,13 @@ const Footer = () => {
                     <h5 className="fw-bold">Quick Links</h5>
                     <ul className="list-unstyled">
                         <li>
-                            <NavLink to={"/"} className="text-white-decoration-none">Home</NavLink>
+                            <NavLink to={"/"} className="text-white text-decoration-none">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/posts"} className="text-white-decoration-none">Posts</NavLink>
+                            <NavLink to={"/posts"} className="text-white text-decoration-none">Posts</NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/about"} className="text-white-decoration-none">About</NavLink>
+                            <NavLink to={"/about"} className="text-white text-decoration-none">About</NavLink>
                         </li>
                     </ul>
                     </Col>

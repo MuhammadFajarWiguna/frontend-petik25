@@ -1,6 +1,4 @@
 import React from "react";
-import MyNavbar from "../../component/MyNavbar/MyNavbar";
-import Footer from "../../component/Footer/Footer.jsx";
 import { Col, Container, Row, Button, Card ,CardBody,CardTitle} from "react-bootstrap";
 import hero_img from "../../assets/new.svg";
 
@@ -8,7 +6,7 @@ const Home = () => {
   const categories = ["Teknologi", "Otomotif", "Fashion", "Sport"];
   return (
     <div className="d-flex flex-column min-vh-100">
-      <MyNavbar />
+
       <div className="bg-primary text-light py-5 flex-fill d-flex align-items-center">
         <Container className="flex-fill d-flex align-items-center">
           <Row className="w-100 align-items-center">
@@ -18,7 +16,7 @@ const Home = () => {
               <p>Pesantren Teknologi Informasi dan Komunikasi (PeTIK) adalah lembaga pendidikan yang fokus pada pengembangan keterampilan IT, khususnya Web Development, Mobile Development dan jaringan.</p>
               <p>Bergabunglah dengan kami dan tingkatkan keahlianmu di dunia digital bersama mentor dan praktisi industri!</p>
               <Button variant="light" size="lg" href="/posts" className="border">
-                Pelajari lebih kanjut
+                Pelajari lebih lanjut
               </Button>
             </Col>
 
@@ -51,7 +49,6 @@ const Home = () => {
           ))}
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 };
