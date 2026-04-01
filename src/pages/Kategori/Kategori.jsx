@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-
+import Card from "../../components/Card/Card";
 
 const Kategori = () => {
   const [categories, setCategories] = useState([]);
@@ -13,9 +13,24 @@ const Kategori = () => {
     getProductCategories();
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search])
+
+    const handleDelete = async (uuid) => {
+    const msg = window.confirm("Yakin ingin menghapus kategori ini?");
+    if (!msg) return;
+    try {
+      await axios.delete(`${import.meta.VITE_API_URL}/jenis-produk/${uuid}`);
+      getProductCategories();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const getProductCategories = async () => {
     try {
-      const result = await axios.get(`https://apiniaga.psjpetik.my.id/api/v1/jenis-produk`);
+      const result = await axios.get(`${import.meta.env.VITE_API_URL}/jenis-produk`);
       // console.log(result.data.data);
       console.log(categories);
 
@@ -37,12 +52,19 @@ const Kategori = () => {
     currentPage * ITEMS_PER_PAGE,
   );
 
+
+
   return (
     <div>
       <div className="kategori-header">
         <h3>Daftar Kategori</h3>
         <NavLink to="/dashboard/kategori/add">Tambah Kategori</NavLink>
       </div>
+
+      <Card>
+        <h3>Ini judul card</h3>
+        <p>Ini konten card</p>
+      </Card>
 
       <div className="table-wrapper">
         <table border={1}>
@@ -64,7 +86,9 @@ const Kategori = () => {
                 </td>
                 <td>
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => handleDelete(category.uuid)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
