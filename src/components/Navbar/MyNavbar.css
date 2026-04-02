@@ -1,0 +1,35 @@
+
+.navbar {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-wrapper {
+  width: 300px;
+}
+
+.search-box {
+  width: 100%;
+  background: #f1f2f6;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-box:focus {
+  background: #e9ecf5;
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4a7bdc;
+}

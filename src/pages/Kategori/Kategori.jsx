@@ -1,51 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
-import { useEffect } from "react";
 import axios from "axios";
-
 
 const Kategori = () => {
   const [categories, setCategories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const {search} = useOutletContext();
+  const { search } = useOutletContext();
 
   useEffect(() => {
     getProductCategories();
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search]);
+
   const getProductCategories = async () => {
     try {
-      const result = await axios.get(`https://apiniaga.psjpetik.my.id/api/v1/jenis-produk`);
-      // console.log(result.data.data);
-      console.log(categories);
-
+      const result = await axios.get(
+        `${import.meta.env.VITE_API_URL}/jenis-produk`
+      );
       setCategories(result.data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const filteredData = categories.filter((category) => {
-    return category.nama?.toLowerCase().includes(search.toLowerCase());
-  });
+  const handleDelete = async (uuid) => {
+    const confirmDelete = window.confirm("Yakin hapus?");
+    if (!confirmDelete) return;
+
+    try {
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/jenis-produk/${uuid}`
+      );
+      getProductCategories();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const filteredData = categories.filter((item) =>
+    item.nama?.toLowerCase().includes(search.toLowerCase())
+  );
 
   const ITEMS_PER_PAGE = 10;
-  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE)
+  const totalPage = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
   const paginatedData = filteredData.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
   );
 
   return (
     <div>
       <div className="kategori-header">
         <h3>Daftar Kategori</h3>
-        <NavLink to="/dashboard/kategori/add">Tambah Kategori</NavLink>
+        <NavLink className="btn-add" to="/dashboard/kategori/add">
+          Tambah Kategori
+        </NavLink>
       </div>
 
       <div className="table-wrapper">
-        <table border={1}>
+        <table>
           <thead>
             <tr>
               <th>No</th>
@@ -55,55 +72,60 @@ const Kategori = () => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map((category, index) => (
-              <tr key={index}>
-                <td>{(currentPage - 1) * ITEMS_PER_PAGE + index + 1}</td>
-                <td>{category.nama}</td>
+            {paginatedData.map((item, index) => (
+              <tr key={item.uuid}>
                 <td>
-                  <img src={category.url} alt="gambar" width={120} />
+                  {(currentPage - 1) * ITEMS_PER_PAGE + index + 1}
+                </td>
+                <td>{item.nama}</td>
+                <td>
+                  <img src={item.url} width={100} />
                 </td>
                 <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <button className="btn-edit">Edit</button>
+                  <button
+                    className="btn-delete"
+                    onClick={() => handleDelete(item.uuid)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      {/* PAGINATION */}
-      {/* currentPage */}
-      {/* totalPage */}
-      {
-        totalPage > 1 && (
-          <div className="pagination">
-            <button 
-            className="btn-page" 
+
+      {totalPage > 1 && (
+        <div className="pagination">
+          <button
+            className="btn-page"
             disabled={currentPage === 1}
-            onClick={() => setCurrentPage((p) => p -1)}
-              >&laquo; Prev
-              </button>
-            {
-              Array.from({length: totalPage}).map((_, i) => (
-                <button
-                className="btn-page"
-                disabled={currentPage === i + 1}
-                key={i}
-                onClick={() => setCurrentPage(i + 1)}
-                >
-                  {i + 1}
-                </button>
-              ))
-            }
-              <button 
-              className="btn-page" 
-              disabled={currentPage === totalPage}
-              onClick={() => setCurrentPage((p) => p + 1)}
-              >&raquo; Next
-              </button>
-          </div>
-        )
-      }
+            onClick={() => setCurrentPage((p) => p - 1)}
+          >
+            Prev
+          </button>
+
+          {Array.from({ length: totalPage }).map((_, i) => (
+            <button
+              key={i}
+              className="btn-page"
+              disabled={currentPage === i + 1}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+
+          <button
+            className="btn-page"
+            disabled={currentPage === totalPage}
+            onClick={() => setCurrentPage((p) => p + 1)}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 };

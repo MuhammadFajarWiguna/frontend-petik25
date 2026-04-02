@@ -1,18 +1,22 @@
-import { useState } from "react";
 import MyNavbar from "../../components/Navbar/MyNavbar.jsx";
 import Sidebar from "../../components/Sidebar/Sidebar.jsx";
-import "./DashboardLayout.css"
+import "./DashboardLayout.css";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
+
 const DashboardLayout = () => {
-    const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
+
   return (
-    <div className="dashboard-layout">
+    <div className="layout">
       <Sidebar />
-      <div className="dashboard-main">
-        <MyNavbar search={search} setSearch={setSearch}/>
-        <main className="dashboard-content">
-            <Outlet context={{ search }}/>
-        </main>
+
+      <div className="main">
+        <MyNavbar search={search} setSearch={setSearch} />
+
+        <div className="content">
+          <Outlet context={{ search }} />
+        </div>
       </div>
     </div>
   );

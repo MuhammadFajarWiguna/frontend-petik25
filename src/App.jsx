@@ -12,7 +12,7 @@ function App() {
       <Route path="/dashboard" element={<DashboardLayout />}>
 
         {/* HALAMAN UTAMA DASHBOARD */}
-        <Route index element={<h1>Dashboard</h1>} />
+      
 
         {/* pesanan */}
         <Route path="pesanan" element={<h1>pesanan</h1>} />
